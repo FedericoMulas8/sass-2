@@ -2,10 +2,10 @@ $red: red;
 $green: green;
 $blue: blue;
 
-@mixin layout($color,$bordercolor) {
+@mixin layout($color,$bordercolor, $fontsize) {
     color: $color;
     border: 3px solid $bordercolor;
-    font-size: 1rem;
+    font-size: $fontsize;
     text-align: center;
     width: 22%;
 }
@@ -45,7 +45,7 @@ div {
         @include flex-content();
     
         article {
-            @include layout($red, $green);
+            @include layout($red, $green, 1rem);
         
             &:nth-of-type(odd) {
                 color: $blue;
@@ -60,7 +60,7 @@ div {
         @include flex-content();
     
         article {
-            @include layout($green, $blue);
+            @include layout($green, $blue, 24px);
             @include flex-content();
             width: 80%;
         }
